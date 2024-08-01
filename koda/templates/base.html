@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>{% block title %}HappyDay{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <div class="content-wrapper">
+            {% block content %}{% endblock %}
+        </div>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

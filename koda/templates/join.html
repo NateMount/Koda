@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="hot-bar container">
+        <h1 class="no-select">HappyDay</h1>
+        <div class="hot-spacer"></div>
+        <ul>
+            <li><a href="#">Join</a></li>
+            <li><a href="{{ url_for('core.create') }}">Create</a></li>
+            <li><a href="#">Info</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1 class="no-select">JOIN THE FUN TODAY!</h1>
+        <div class="form-wrap">
+            <form method="post">
+                <input type="text" name="join-code" spellcheck="false" autocomplete="off" maxLength="6" inputmode="numeric" pattern="[0-9]+">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-web">
+            <a href="{{ url_for('core.create') }}">Make An Event!</a>
+        </div>
+
+        <div class="footer-mobile">
+            <h1 class="no-select">Make An Event!</h1>
+            <h2 class="no-select">Lets start having some fun!</h2>
+            <a>Get Started</a>
+        </div>
+    </div>
+
+
+{% endblock %}

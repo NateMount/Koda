@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    overflow: hidden;
+}
+
+h1{
+    background-color: #fffffe;
+    width: 15%;
+    text-align: center;
+    padding: 10px;
+    border: solid black 5px;
+    border-bottom-right-radius: 15px;
+    z-index: 10;
+    position: absolute;
+}
+
+img{
+    width: 100%;
+    object-fit: fill;
+    align-self: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/event.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="display-header">
+        <img src="{{ event.photo_path }}">
+        <h1>{{ event.title }}</h1>
+    </div>
+
+    <div class="active-bar">
+        <button data-modal-target="#modal" class="hotbar-feature upload">Upload</button>
+        <button class="hotbar-feature download-all">Download All</button>
+        <a class="hotbar-feature present-wrapper" href="/event/{{ event.alias }}/live">Present</a>
+        <h1 class="join-code">Code: {{ event.code }}</h1>
+    </div>
+
+    <div class="upload-gallery">
+        {% for item in content %}
+            <div class="media-container container">
+                <img src="{{ item.path }}" alt="{{ item.caption }}">
+                <h1>{{ item.caption }}</h1>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="modal container" id="modal">
+        <div class="modal-head">
+            <h1>Upload</h1>
+            <button data-close-button class="modal-close">&times;</button>
+        </div>
+        <form method="post" enctype=multipart/form-data>
+            <img id="image-preview" src="{{ url_for('static', filename='icons/image_upload_default.png') }}" alt="image preview">
+            <!--<input type="text" name="caption">-->
+            <span class="upload-section">
+                <label for="photo-upload" class="container">Choose Photo</label>
+                <input type="file" name="photo-upload" accepts="image/*" id="photo-upload">
+                <button type="submit">Submit</button>
+            </span>
+        </form>
+    </div>
+    <div id="overlay"></div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/event.js') }}"></script>
+    <script>
+        let eventPhoto = document.getElementById("image-preview");
+        let inputFile = document.getElementById("photo-upload")
+
+        inputFile.onchange = function () {
+            eventPhoto.src = URL.createObjectURL(inputFile.files[0]);
+        }
+
+    </script>
+{% endblock %}
