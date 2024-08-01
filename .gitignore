@@ -25,3 +25,10 @@ venv.bak/
 instance/
 .webassets-cache
 *.db
+
+# Media Content
+*.webp
+*.png
+*.gif
+*.jpg
+*.jpeg
