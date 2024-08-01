@@ -1,4 +1,17 @@
 
+/* Main Styling Elements */
+*{
+    overflow-x: hidden;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body{
+    overflow: hidden;
+}
 
 .form-selection{
     height: 100%;
@@ -114,10 +127,16 @@ textarea {
 
     form{
         display: block;
+        width: 100%;
+    }
+
+
+    form{
+        width: 100%;
+        margin-top: 30dvh;
     }
 
     .content-select{
-        height: 60dvh;
         width: 100%;
     }
 
@@ -125,10 +144,53 @@ textarea {
         display: none;
     }
 
-    .image-select{
-        height: 40dvh;
+    .content-select textarea,
+    .content-select input[type=text]{
+        width: 86%;
+        margin-left: calc(7% - 13px);
+        border-radius: 16px;
+        font-size: 24px;
+    }
+
+    .content-select input[type=text]{
+        box-shadow: 5px 5px 0 #000000;
+        border: 7px solid black;
+        height: 5dvh;
+    }
+
+    .content-select textarea{
+        height: 45dvh;
+    }
+
+    .content-select button{
+        width: 89%;
+        margin-left: calc(7% - 13px);
+        border: 7px solid black;
+        margin-top: -50px;
+    }
+
+    .image-select {
+        height: 28.5dvh;
+        position: absolute;
+        top: 0;
         width: 100%;
     }
 
+    .image-select img{
+        width: 86%;
+        height: 80%;
+        margin-left: calc(7% - 7px);
+    }
+
+    .photo-upload{
+        left: 6%;
+        width: 50px;
+        bottom: 5%;
+    }
+
+    .photo-upload img{
+        width: 90%;
+        margin-left: 5%;
+    }
 
 }
