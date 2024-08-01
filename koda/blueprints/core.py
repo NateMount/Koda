@@ -71,3 +71,7 @@ def create():
 
     return render_template('create.html')
 
+@frame.route('/info')
+def info():
+    return "tmp"
+
