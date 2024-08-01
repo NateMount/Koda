@@ -32,3 +32,6 @@ instance/
 *.gif
 *.jpg
 *.jpeg
+
+# Personal
+.token
